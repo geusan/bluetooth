@@ -9,7 +9,7 @@ NUM_LEDS = 8
 app = Flask(__name__, static_url_path='')
 app.config.from_object(__name__)
 
-# pixels = neopixels.new_instance(NUM_LEDS)
+pixels = neopixels.new_instance(NUM_LEDS)
 
 
 @app.route('/')
