@@ -1,4 +1,5 @@
 from __future__ import print_function
+import time
 
 try:
     from neopixel import *
@@ -44,7 +45,7 @@ class NeoPixels:
     def colorWipe(self, r,g,b, wait_ms=50):
     	"""Wipe color across display a pixel at a time."""
         col = Color(r,g,b)
-    	for i in range(strip.numPixels()):
+    	for i in range(self.pixels.numPixels()):
     		self.pixels.setPixelColor(i, col)
     		self.pixels.show()
     		time.sleep(wait_ms/1000.0)

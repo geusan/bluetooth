@@ -33,10 +33,11 @@ def set_brightness(n):
 
 @app.route('/mode/<mode>')
 def set_mode(mode):
-    if mode == "colorWipe":
+   if mode == "colorWipe":
        pixels.colorWipe(255,0,0)
        pixels.colorWipe(0,255,0)
        pixels.colorWipe(0,0,255)
+   
    elif mode == "theaterChase":
        pixels.theaterChase(127,127,127)
        pixels.theaterChase(127,0,0)
@@ -47,6 +48,7 @@ def set_mode(mode):
        pixels.rainbowCycle()
        pixels.theaterChaseRainbow()
 
+   pixels.set_brightness(0)
    return "OK %s" % mode
 
 if __name__ == '__main__':
