@@ -1,40 +1,38 @@
-<!doctype html>
-<html lang="en" ng-app="pilightsApp">
-<head>
-  <meta charset="utf-8">
-  <title>PiLights</title>
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-  <link rel='stylesheet' href='bower_components/spectrum/spectrum.css' />
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns#">
 
-  <script src="bower_components/jquery/dist/jquery.min.js"></script>
-  <script src="bower_components/angular/angular.js"></script>
-  <script src="bower_components/angular-route/angular-route.js"></script>
-  <script src="bower_components/spectrum/spectrum.js"></script>
-  <script src="js/app.js"></script>
-</head>
-<body>
+   <head>
+      <meta charset="UTF-8">
+      <link rel="image_src" href="https://eccentrip.github.io/public/images/geusan/001.png" />
+      <meta name="description" content="강의 도우미 Your Lecture Helper ULEC 입니다." >
+      <meta property="og:site_name" content="ILLUX"/>
+      <meta property="og:image" content="https://eccentrip.github.io/public/images/geusan/001.png" />
+      <meta property="og:image:type" content="image/png">
+      <meta property="og:image:width" content="200">
+      <meta property="og:image:height" content="200">
+      <meta property="og:url" content="https://eccentrip.github.io/">
+      <meta property="og:type" content="website" />
 
-  <div class="view-container">
-    <h1>Pi Lights</h1>
-    <input type="text" id="colorpicker" />
-  </div>
+      <meta property="og:title" content="ULEC" />
+      <meta property="og:description" content="외국어 강의 도우미 ULEC" />
+      <link rel="shortcut icon" href="/public/images/favicon.ico" />
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/css/materialize.min.css"  media="screen,projection"/ />
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-</body>
+      <title>컨트롤러</title>
+   </head>
 
-<script>
-  // milliseconds between posting light requests
-  var UPDATE_DELAY_MS = 100;
-  var lastRequest = Date.now();
+   <body>
+      <div id="root"></div>
 
-  $("#colorpicker").spectrum({
-    color: "#f00",
-    flat: true,
-    move: function(color) {
-      if (Date.now() - lastRequest > UPDATE_DELAY_MS) {
-        $.post('setcolor', color.toRgb());
-        lastRequest = Date.now();
-      }
-    }
-  });
-</script>
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+      <!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>-->
+      <script src="/bundle.js" defer></script>
+   </body>
+
 </html>
