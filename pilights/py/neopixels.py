@@ -77,7 +77,7 @@ class NeoPixels:
     	"""Draw rainbow that fades across all pixels at once."""
     	for j in range(256*iterations):
     		for i in range(self.pixels.numPixels()):
-    			self.pixels.setPixelColor(i, wheel((i+j) & 255))
+    			self.pixels.setPixelColor(i, self.wheel((i+j) & 255))
     		self.pixels.show()
     		time.sleep(wait_ms/1000.0)
 
