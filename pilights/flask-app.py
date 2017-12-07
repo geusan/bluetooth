@@ -1,7 +1,7 @@
 import sys
 
 from flask import Flask, request
-# from py import neopixels
+from py import neopixels
 
 DEBUG = True
 NUM_LEDS = 8
