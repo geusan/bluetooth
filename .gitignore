@@ -1,1 +1,21 @@
 denv/
+.sconsign.dblite
+version.h
+*.pyc
+test
+newtest
+*.o
+*.a
+*.swp
+logs/*
+!.gitkeep
+tmp
+.idea
+.DS_Store
+bower_components/
+
+# python stuff
+__pycache__
+*.pyc
+*.pyo
+webserver
