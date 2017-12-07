@@ -25,6 +25,12 @@ def set_color(r,g,b):
     pixels.set_all(r, g, b)
     return "OK"
 
+@app.route('/setbrightness/<n>')
+def set_brightness(n):
+   n = int(n)
+   pixels.set_brightness(n)
+   return "OK"
+
 @app.route('/mode/<mode>')
 def set_mode(mode):
     if mode == "colorWipe":
