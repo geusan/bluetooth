@@ -85,7 +85,7 @@ class NeoPixels:
     	"""Draw rainbow that uniformly distributes itself across all pixels."""
     	for j in range(256*iterations):
     		for i in range(self.pixels.numPixels()):
-    			self.pixels.setPixelColor(i, wheel((int(i * 256 / self.pixels.numPixels()) + j) & 255))
+    			self.pixels.setPixelColor(i, self.wheel((int(i * 256 / self.pixels.numPixels()) + j) & 255))
     		self.pixels.show()
     		time.sleep(wait_ms/1000.0)
 
@@ -94,7 +94,7 @@ class NeoPixels:
     	for j in range(256):
     		for q in range(3):
     			for i in range(0, self.pixels.numPixels(), 3):
-    				self.pixels.setPixelColor(i+q, wheel((i+j) % 255))
+    				self.pixels.setPixelColor(i+q, self.wheel((i+j) % 255))
     			self.pixels.show()
     			time.sleep(wait_ms/1000.0)
     			for i in range(0, self.pixels.numPixels(), 3):
