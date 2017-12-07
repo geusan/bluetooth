@@ -1,7 +1,7 @@
 import sys
 
 from flask import Flask, request
-from py import neopixels
+# from py import neopixels
 
 DEBUG = True
 NUM_LEDS = 8
@@ -9,7 +9,7 @@ NUM_LEDS = 8
 app = Flask(__name__, static_url_path='')
 app.config.from_object(__name__)
 
-pixels = neopixels.new_instance(NUM_LEDS)
+# pixels = neopixels.new_instance(NUM_LEDS)
 
 
 @app.route('/')
@@ -37,7 +37,7 @@ def set_mode(mode):
        pixels.colorWipe(255,0,0)
        pixels.colorWipe(0,255,0)
        pixels.colorWipe(0,0,255)
-   
+
    elif mode == "theaterChase":
        pixels.theaterChase(127,127,127)
        pixels.theaterChase(127,0,0)
