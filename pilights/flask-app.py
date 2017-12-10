@@ -12,7 +12,7 @@ app.config.from_object(__name__)
 pixels = neopixels.new_instance(NUM_LEDS)
 
 
-@app.route('/')
+@app.route('/index')
 def root():
     return app.send_static_file('index.html')
 
