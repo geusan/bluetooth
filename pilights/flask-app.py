@@ -48,7 +48,7 @@ def set_mode(mode):
        pixels.rainbowCycle()
        pixels.theaterChaseRainbow()
 
-   pixels.set_brightness(0)
+   pixels.set_all(0,0,0)
    return "OK %s" % mode
 
 if __name__ == '__main__':
