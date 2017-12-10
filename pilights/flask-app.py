@@ -33,9 +33,9 @@ def set_brightness(n):
    pixels.set_brightness(n)
    return "OK"
 
-@app.route('/setTurn/<n>')
+@app.route('/setturn/<n>')
 def setTurn(n):
-   pixels.set_turn(n)
+   pixels.set_turn(int(n))
    return "OK"
 
 @app.route('/mode/<mode>')
