@@ -39,9 +39,19 @@ class NeoPixels:
         self.pixels.show()
 
     def set_brightness(self, brightness):
-        self.pixels.setBrightness(brightness)
-        self.pixels.show()
+        if brightness > 200:
+            for i in range(51,255,1):
+                self.pixels.setBrightness(i)
+                self.pixels.show()
+        else:
+            for i in range(255,51,-1):
+                self.pixels.setBrightness(i)
+                self.pixels.show()
 
+    def set_turn(self, b):
+        self.pixels.setBrightness(b)
+        self.pixels.show()
+        
     def colorWipe(self, r,g,b, wait_ms=50):
     	"""Wipe color across display a pixel at a time."""
         col = Color(r,g,b)

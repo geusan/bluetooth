@@ -14,6 +14,8 @@ pixels = neopixels.new_instance(NUM_LEDS)
 
 @app.route('/index')
 def root():
+    pixels.set_all(0,0,0)
+    pixels.set_brightness(255)
     return app.send_static_file('index.html')
 
 
@@ -31,6 +33,11 @@ def set_brightness(n):
    pixels.set_brightness(n)
    return "OK"
 
+@app.route('/setTurn/<n>')
+def setTurn(n):
+   pixels.set_turn(n)
+   return "OK"
+
 @app.route('/mode/<mode>')
 def set_mode(mode):
    if mode == "colorWipe":
@@ -44,9 +51,9 @@ def set_mode(mode):
        pixels.theaterChase(0,0,127)
 
    elif mode == "rainbow":
-       pixels.rainbow()
+       # pixels.rainbow()
        pixels.rainbowCycle()
-       pixels.theaterChaseRainbow()
+       # pixels.theaterChaseRainbow()
 
    pixels.set_all(0,0,0)
    return "OK %s" % mode
