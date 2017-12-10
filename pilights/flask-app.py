@@ -6,7 +6,7 @@ from py import neopixels
 DEBUG = True
 NUM_LEDS = 8
 
-app = Flask(__name__, static_url_path='static')
+app = Flask(__name__, static_url_path='/static')
 app.config.from_object(__name__)
 
 pixels = neopixels.new_instance(NUM_LEDS)
